@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🚀 DDoS Test Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .visitor-info {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .log {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: left;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 DDoS Test Server</h1>
+        <p><em>Monitoring all requests in real-time</em></p>
+        
+        <div class="visitor-info">
+            <p><strong>Your IP:</strong> <span id="ip">Loading...</span></p>
+            <p><strong>Visit Time:</strong> <span id="time">Loading...</span></p>
+            <p><strong>User Agent:</strong> <span id="ua">Loading...</span></p>
+        </div>
+
+        <div class="log">
+            <strong>Server Logs will show:</strong><br>
+            • Your IP address<br>
+            • Timestamp of visit<br>
+            • Page accessed<br>
+            • User agent info
+        </div>
+
+        <p>Refresh this page to see new log entries!</p>
+    </div>
+
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+        document.getElementById('ua').textContent = navigator.userAgent;
+        
+        // Get client IP (simplified - will show in server logs)
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = data.ip;
+            });
+    </script>
+</body>
+</html>

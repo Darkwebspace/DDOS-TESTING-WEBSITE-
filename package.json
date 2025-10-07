@@ -1,0 +1,12 @@
+{
+  "name": "ddos-test-server",
+  "version": "1.0.0",
+  "description": "Simple server for DDoS testing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
