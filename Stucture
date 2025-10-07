@@ -1,0 +1,7 @@
+DDOS-TESTING-WEBSITE/
+├── package.json
+├── server.js
+├── index.html
+├── railway.toml   
+├── README.md      
+└── .gitignore  
